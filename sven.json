@@ -1,0 +1,2929 @@
+[
+  {
+    "id": "b66e5e6e.4cce8",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sunset",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sun.sun",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "below_horizon",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 90,
+    "y": 1080,
+    "wires": [
+      [
+        "9611fe7b.b83d7"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c664bd1c.76e1e",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Rain chance below 20%",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "20.0",
+    "halt_if_type": "num",
+    "halt_if_compare": "lt",
+    "override_topic": false,
+    "entity_id": "sensor.dark_sky_precip_probability_0h",
+    "state_type": "num",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 910,
+    "y": 1260,
+    "wires": [
+      [
+        "7308f0e5.6881f"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7308f0e5.6881f",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Lawn wet",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "binary_sensor.lawn_wet",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 860,
+    "y": 1320,
+    "wires": [
+      [],
+      [
+        "d261463f.2edc28"
+      ]
+    ]
+  },
+  {
+    "id": "edf43e8.2778a4",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sunrise",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sun.sun",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "above_horizon",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 90,
+    "y": 1840,
+    "wires": [
+      [
+        "bda3896.bda8378"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "a58575d7.876f88",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "PARK SVEN",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "vacuum",
+    "service": "return_to_base",
+    "entityId": "vacuum.sven",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1290,
+    "y": 1680,
+    "wires": [
+      [
+        "70fe7955.a73118"
+      ]
+    ]
+  },
+  {
+    "id": "3ca52479.1918f4",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Garage Opened",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "cover.garage_door",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "open",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 120,
+    "y": 1900,
+    "wires": [
+      [
+        "27f62012.6a113"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6f8ea92a.d3ce08",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Garage Closed",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "cover.garage_door",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "closed",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 120,
+    "y": 1560,
+    "wires": [
+      [
+        "9611fe7b.b83d7",
+        "6871de8.0a526a"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c21f3484.576de",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "PAUSE SVEN",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "vacuum",
+    "service": "stop",
+    "entityId": "vacuum.sven",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1300,
+    "y": 1740,
+    "wires": [
+      [
+        "da119a58.00717"
+      ]
+    ]
+  },
+  {
+    "id": "9611fe7b.b83d7",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Garage closed?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "closed",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "cover.garage_door",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 920,
+    "y": 540,
+    "wires": [
+      [
+        "32111989.1c65f6",
+        "91d4500e.3abec8",
+        "f97fdf91.1d3138"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "fc2078a7.1b8818",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Is Sun down?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "below_horizon",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "sun.sun",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1620,
+    "y": 1040,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f69f407e.d13cf8",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "START SVEN",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "vacuum",
+    "service": "start_pause",
+    "entityId": "vacuum.sven",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1440,
+    "y": 1560,
+    "wires": [
+      [
+        "5a8989b9.ea81c8"
+      ]
+    ]
+  },
+  {
+    "id": "27f62012.6a113",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven in Driveway?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "driveway_crossing",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_text.sven_location",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 370,
+    "y": 1900,
+    "wires": [
+      [
+        "40cec564.58338c"
+      ],
+      [
+        "5a308e2a.466e3"
+      ]
+    ]
+  },
+  {
+    "id": "83c8d9d3.4c6708",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "south lawn",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "11",
+    "points": [
+      {
+        "latitude": "0",
+        "longitude": "0"
+      },
+      {
+        "latitude": "0",
+        "longitude": "0"
+      },
+      {
+        "latitude": "0",
+        "longitude": "0"
+      },
+      {
+        "latitude": "0",
+        "longitude": "0"
+      }
+    ],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 570,
+    "y": 2360,
+    "wires": [
+      [
+        "30a65054.e716f8",
+        "a93d58a9.f631b8"
+      ]
+    ]
+  },
+  {
+    "id": "10ad8de.e0bf0f2",
+    "type": "poll-state",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "updateinterval": "1",
+    "updateIntervalUnits": "seconds",
+    "outputinitially": false,
+    "outputonchanged": true,
+    "entity_id": "device_tracker.automower_l_192800003_191942247",
+    "state_type": "str",
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "x": 270,
+    "y": 2100,
+    "wires": [
+      [
+        "da822b6e.454c"
+      ]
+    ]
+  },
+  {
+    "id": "4c18acda.e3d5b4",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "20% chance of rain",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.dark_sky_precip_probability_0h",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "num",
+    "haltifstate": "20",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 130,
+    "y": 1460,
+    "wires": [
+      [
+        "40cec564.58338c",
+        "9fbcf900.00f168"
+      ],
+      [
+        "7d74019c.22428"
+      ]
+    ]
+  },
+  {
+    "id": "f4e02434.e8dfc",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sprinkler rotors started",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.rotors_running",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 140,
+    "y": 1760,
+    "wires": [
+      [
+        "43de6a5.13b0394",
+        "40cec564.58338c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "43de6a5.13b0394",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Notification",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"sprinkler rotors started\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 350,
+    "y": 1780,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "18c5b516.e3ac7b",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sven daytime cutting",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.sven_daytime",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 110,
+    "y": 300,
+    "wires": [
+      [
+        "76472eca.0a2db8"
+      ],
+      [
+        "49c99bcf.b822dc"
+      ]
+    ]
+  },
+  {
+    "id": "b8f2c6d1.54da08",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "\"Hold Sven\" switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.hold_sven",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 890,
+    "y": 1500,
+    "wires": [
+      [],
+      [
+        "5b54cdf7.542294"
+      ]
+    ]
+  },
+  {
+    "id": "5555d030.10de08",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Lawn drained",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.lawn_wet",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "false",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 110,
+    "y": 1500,
+    "wires": [
+      [
+        "7d74019c.22428",
+        "9fbcf900.00f168"
+      ],
+      [
+        "40cec564.58338c"
+      ]
+    ]
+  },
+  {
+    "id": "90e21821.786728",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "driveway crossing",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "10",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 290,
+    "y": 2060,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "af3a96b5.a052a8",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "west lawn",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "10",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 560,
+    "y": 2480,
+    "wires": [
+      [
+        "e0885149.530cb8",
+        "740b43d1.aed50c"
+      ]
+    ]
+  },
+  {
+    "id": "ecfcc50f.f13db8",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "back yard",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "18",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 560,
+    "y": 2600,
+    "wires": [
+      [
+        "9e43f132.186e48"
+      ]
+    ]
+  },
+  {
+    "id": "db4d4688.c9c41",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "east side lawn",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "8",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 580,
+    "y": 2660,
+    "wires": [
+      [
+        "55f455bb.6e0e94"
+      ]
+    ]
+  },
+  {
+    "id": "dbbf9c91.dcc8c8",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "not driveway crossing",
+    "mode": "circle",
+    "inside": "false",
+    "rad": "10",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 500,
+    "y": 2060,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a93d58a9.f631b8",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven in south lawn",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"south lawn\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 770,
+    "y": 2420,
+    "wires": [
+      [
+        "aa44cd70.81936"
+      ]
+    ]
+  },
+  {
+    "id": "e0885149.530cb8",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven in west lawn",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"west lawn\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 770,
+    "y": 2540,
+    "wires": [
+      [
+        "aa44cd70.81936"
+      ]
+    ]
+  },
+  {
+    "id": "9e43f132.186e48",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven in backyard",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"backyard\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 770,
+    "y": 2600,
+    "wires": [
+      [
+        "aa44cd70.81936"
+      ]
+    ]
+  },
+  {
+    "id": "55f455bb.6e0e94",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven in east side lawn",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"east side yard\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 780,
+    "y": 2660,
+    "wires": [
+      [
+        "aa44cd70.81936"
+      ]
+    ]
+  },
+  {
+    "id": "da822b6e.454c",
+    "type": "change",
+    "z": "8f678c81.ff727",
+    "name": "lat/lon conversion",
+    "rules": [
+      {
+        "t": "set",
+        "p": "lat",
+        "pt": "msg",
+        "to": "data.attributes.latitude",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "lon",
+        "pt": "msg",
+        "to": "data.attributes.longitude",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 610,
+    "y": 2100,
+    "wires": [
+      [
+        "6b09fd15.7f0c14"
+      ]
+    ]
+  },
+  {
+    "id": "5c32a2ec.ac347c",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven at dock",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"docked\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 750,
+    "y": 2300,
+    "wires": [
+      [
+        "aa44cd70.81936"
+      ]
+    ]
+  },
+  {
+    "id": "8f93f3fc.bd4768",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "dock",
+    "mode": "circle",
+    "inside": "true",
+    "rad": "1.5",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 330,
+    "y": 2300,
+    "wires": [
+      [
+        "5c32a2ec.ac347c"
+      ]
+    ]
+  },
+  {
+    "id": "b0e90df2.5c5b6",
+    "type": "geofence",
+    "z": "8f678c81.ff727",
+    "name": "not at dock",
+    "mode": "circle",
+    "inside": "false",
+    "rad": "1.5",
+    "points": [],
+    "centre": {
+      "latitude": "0",
+      "longitude": "0"
+    },
+    "x": 350,
+    "y": 2340,
+    "wires": [
+      [
+        "83c8d9d3.4c6708",
+        "af3a96b5.a052a8",
+        "ecfcc50f.f13db8",
+        "db4d4688.c9c41"
+      ]
+    ]
+  },
+  {
+    "id": "d261463f.2edc28",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "\"When Ben's not home\" switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.mow_when_bens_not_home",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 930,
+    "y": 1380,
+    "wires": [
+      [
+        "b8f2c6d1.54da08"
+      ],
+      [
+        "47e13bfd.646af4"
+      ]
+    ]
+  },
+  {
+    "id": "47e13bfd.646af4",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Ben Home",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "binary_sensor.ben_home",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1210,
+    "y": 1400,
+    "wires": [
+      [
+        "b8f2c6d1.54da08"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "30738ea6.4bc5f2",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Ben Home",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.ben_home",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 100,
+    "y": 1400,
+    "wires": [
+      [
+        "9611fe7b.b83d7"
+      ],
+      [
+        "ee6eba98.1fab08"
+      ]
+    ]
+  },
+  {
+    "id": "c9346a8c.fb0668",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "\"When Ben's not home\" switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mow_when_bens_not_home",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 160,
+    "y": 1240,
+    "wires": [
+      [
+        "9611fe7b.b83d7"
+      ],
+      [
+        "9611fe7b.b83d7"
+      ]
+    ]
+  },
+  {
+    "id": "ee6eba98.1fab08",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "\"When Ben's not home\" switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.mow_when_bens_not_home",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 330,
+    "y": 1420,
+    "wires": [
+      [],
+      [
+        "40cec564.58338c"
+      ]
+    ]
+  },
+  {
+    "id": "76472eca.0a2db8",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Is Sun down?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "below_horizon",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "sun.sun",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 340,
+    "y": 300,
+    "wires": [
+      [],
+      [
+        "9611fe7b.b83d7"
+      ]
+    ]
+  },
+  {
+    "id": "49c99bcf.b822dc",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Is Sun down?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "below_horizon",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "sun.sun",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 340,
+    "y": 360,
+    "wires": [
+      [],
+      [
+        "40cec564.58338c"
+      ]
+    ]
+  },
+  {
+    "id": "d4ba9e38.22bc5",
+    "type": "comment",
+    "z": "8f678c81.ff727",
+    "name": "MOWING",
+    "info": "",
+    "x": 60,
+    "y": 560,
+    "wires": []
+  },
+  {
+    "id": "40cec564.58338c",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven Parked manually?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Parked manually, Stopping..., Preparing to park...,Searching base",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "override_topic": false,
+    "entity_id": "vacuum.sven",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 750,
+    "y": 1740,
+    "wires": [
+      [],
+      [
+        "df6c9a80.eb8138"
+      ]
+    ]
+  },
+  {
+    "id": "154fc061.d42c58",
+    "type": "comment",
+    "z": "8f678c81.ff727",
+    "name": "SVEN LOCATION",
+    "info": "",
+    "x": 90,
+    "y": 2060,
+    "wires": []
+  },
+  {
+    "id": "8b598835.58531",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Garage closed?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "closed",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "cover.garage_door",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 640,
+    "y": 1640,
+    "wires": [
+      [
+        "40cec564.58338c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3eb44da7.a6e0c2",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven MWF switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_mwf",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 890,
+    "y": 1200,
+    "wires": [
+      [
+        "72bffed7.4a44f8"
+      ],
+      [
+        "c664bd1c.76e1e"
+      ]
+    ]
+  },
+  {
+    "id": "72bffed7.4a44f8",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "MWF?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "binary_sensor.mwf",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1190,
+    "y": 1200,
+    "wires": [
+      [
+        "4dda7072.609b"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6b09fd15.7f0c14",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven in driveway",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "driveway_crossing",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "device_tracker.automower_l_192800003_191942247",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 150,
+    "y": 2180,
+    "wires": [
+      [
+        "645e0f5f.e114e8",
+        "95841161.e748f"
+      ],
+      [
+        "b0e90df2.5c5b6",
+        "8f93f3fc.bd4768"
+      ]
+    ]
+  },
+  {
+    "id": "52996b94.5f47b4",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven in west lawn\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1340,
+    "y": 2460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "87f9c7c6.3c717",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven crossing driveway\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 920,
+    "y": 2240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5cb12169.2a6b78",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven paused\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1300,
+    "y": 2000,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4827cc4f.0f8854",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven started\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1300,
+    "y": 1880,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c8a03e57.a52e3",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven parked\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1300,
+    "y": 1940,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "99255e93.1cb1f",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven location already set to driveway?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "driveway crossing",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_text.sven_location",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 670,
+    "y": 2240,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "a16eb99b.59ea4",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven location already set to west lawn?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "west lawn",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_text.sven_location",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1020,
+    "y": 2480,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "292a3b8f.fd8e94",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1080,
+    "y": 1880,
+    "wires": [
+      [
+        "4827cc4f.0f8854"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "740b43d1.aed50c",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 760,
+    "y": 2480,
+    "wires": [
+      [
+        "a16eb99b.59ea4"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "95841161.e748f",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 420,
+    "y": 2240,
+    "wires": [
+      [
+        "99255e93.1cb1f"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "bbb49bd.5955068",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1080,
+    "y": 2000,
+    "wires": [
+      [
+        "5cb12169.2a6b78"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c6afc260.ce6a3",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1080,
+    "y": 1940,
+    "wires": [
+      [
+        "c8a03e57.a52e3"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "86f7fcd8.5662d8",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sven battery becomes full",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.sven_battery",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "num",
+    "haltifstate": "100",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 150,
+    "y": 2880,
+    "wires": [
+      [
+        "62645131.117aa"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e7df8be1.edd668",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven battery 100\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 740,
+    "y": 2880,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "62645131.117aa",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 360,
+    "y": 2880,
+    "wires": [
+      [
+        "534407c3.37675"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "534407c3.37675",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Parked manually",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Parked manually",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "vacuum.sven",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 550,
+    "y": 2880,
+    "wires": [
+      [
+        "e7df8be1.edd668"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "84f89486.4be048",
+    "type": "comment",
+    "z": "8f678c81.ff727",
+    "name": "Verbose battery charged notification",
+    "info": "",
+    "x": 140,
+    "y": 2840,
+    "wires": []
+  },
+  {
+    "id": "5b54cdf7.542294",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven cutting",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Cutting, Searching base, Charging, Starting...",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "override_topic": false,
+    "entity_id": "vacuum.sven",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1070,
+    "y": 1500,
+    "wires": [
+      [],
+      [
+        "cd5adaed.8813f8"
+      ]
+    ]
+  },
+  {
+    "id": "f26a6312.8539a",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven in south lawn\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1280,
+    "y": 2340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "35d832bf.039596",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven location already set to south lawn?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "south lawn",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_text.sven_location",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1020,
+    "y": 2340,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "30a65054.e716f8",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 760,
+    "y": 2360,
+    "wires": [
+      [
+        "35d832bf.039596"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "aa44cd70.81936",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Garage closed?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "closed",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "cover.garage_door",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1140,
+    "y": 2180,
+    "wires": [
+      [],
+      [
+        "5a308e2a.466e3"
+      ]
+    ]
+  },
+  {
+    "id": "645e0f5f.e114e8",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven in driveway crossing",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_text",
+    "service": "set_value",
+    "entityId": "input_text.sven_location",
+    "data": "{\"value\":\"driveway crossing\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 510,
+    "y": 2180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5a308e2a.466e3",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Paused or Parked?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Paused,Parked manually,Charging,Stopping...",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "override_topic": false,
+    "entity_id": "vacuum.sven",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 730,
+    "y": 1820,
+    "wires": [
+      [],
+      [
+        "6d4158b6.f5bd"
+      ]
+    ]
+  },
+  {
+    "id": "6871de8.0a526a",
+    "type": "delay",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "2",
+    "timeoutUnits": "minutes",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 840,
+    "y": 1600,
+    "wires": [
+      [
+        "230f949f.00c22c"
+      ]
+    ]
+  },
+  {
+    "id": "4dda7072.609b",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "After 5pm",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "binary_sensor.after_five",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1360,
+    "y": 1200,
+    "wires": [
+      [
+        "c664bd1c.76e1e"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "afacba46.107a4",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Lawn Wet",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.lawn_wet",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 100,
+    "y": 3000,
+    "wires": [
+      [
+        "7a01d55c.e68a0c"
+      ],
+      [
+        "14a994c7.63b103"
+      ]
+    ]
+  },
+  {
+    "id": "14cde307.381e6d",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Lawn Wet\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 540,
+    "y": 2940,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3d4b2cd2.64ad4c",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Lawn dry\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 540,
+    "y": 3080,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "14a994c7.63b103",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 300,
+    "y": 3040,
+    "wires": [
+      [
+        "3d4b2cd2.64ad4c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7a01d55c.e68a0c",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 300,
+    "y": 2960,
+    "wires": [
+      [
+        "14cde307.381e6d"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6e75e3ca.9e0b74",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sven Paused",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "vacuum.sven",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "habool",
+    "haltifstate": "Paused",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 110,
+    "y": 1680,
+    "wires": [
+      [
+        "9678dabd.621dd8"
+      ],
+      [
+        "9c74c47b.287048"
+      ]
+    ]
+  },
+  {
+    "id": "9678dabd.621dd8",
+    "type": "delay",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "45",
+    "timeoutUnits": "minutes",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 470,
+    "y": 1640,
+    "wires": [
+      [
+        "8b598835.58531"
+      ]
+    ]
+  },
+  {
+    "id": "9c74c47b.287048",
+    "type": "change",
+    "z": "8f678c81.ff727",
+    "name": "RESET",
+    "rules": [
+      {
+        "t": "set",
+        "p": "reset",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 320,
+    "y": 1700,
+    "wires": [
+      [
+        "9678dabd.621dd8"
+      ]
+    ]
+  },
+  {
+    "id": "7d74019c.22428",
+    "type": "delay",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "hours",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 640,
+    "y": 1500,
+    "wires": [
+      [
+        "9611fe7b.b83d7"
+      ]
+    ]
+  },
+  {
+    "id": "230f949f.00c22c",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Paused?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Paused",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "override_topic": false,
+    "entity_id": "vacuum.sven",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1000,
+    "y": 1580,
+    "wires": [
+      [
+        "cd5adaed.8813f8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9fbcf900.00f168",
+    "type": "change",
+    "z": "8f678c81.ff727",
+    "name": "RESET",
+    "rules": [
+      {
+        "t": "set",
+        "p": "reset",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 620,
+    "y": 1440,
+    "wires": [
+      [
+        "7d74019c.22428"
+      ]
+    ]
+  },
+  {
+    "id": "ee457dd4.f21d58",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sven Time dropdown changed",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_select.sven_time",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "x": 140,
+    "y": 140,
+    "wires": [
+      [
+        "9611fe7b.b83d7",
+        "290d26db.22ac92"
+      ]
+    ]
+  },
+  {
+    "id": "32111989.1c65f6",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven daylight running",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Night, Wee Hours, Hold",
+    "halt_if_type": "str",
+    "halt_if_compare": "does_not_include",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1300,
+    "y": 1060,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      [
+        "fc2078a7.1b8818"
+      ]
+    ]
+  },
+  {
+    "id": "bda3896.bda8378",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven daylight running",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Night, Wee Hours, Hold",
+    "halt_if_type": "str",
+    "halt_if_compare": "does_not_include",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 360,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "40cec564.58338c"
+      ]
+    ]
+  },
+  {
+    "id": "c1ca0481.ac53a",
+    "type": "comment",
+    "z": "8f678c81.ff727",
+    "name": "TODO: unpark after garage closed",
+    "info": "when PARK_SVEN is called because sven was in driveway when garage door opened",
+    "x": 1960,
+    "y": 1640,
+    "wires": []
+  },
+  {
+    "id": "aab71068.05ce",
+    "type": "debug",
+    "z": "8f678c81.ff727",
+    "name": "sven parked (for the night, potentially?) because it was in driveway when the garage was opened",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "x": 2150,
+    "y": 1680,
+    "wires": []
+  },
+  {
+    "id": "91d4500e.3abec8",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "All",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "All",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1250,
+    "y": 940,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f97fdf91.1d3138",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Workday",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Workday",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1260,
+    "y": 620,
+    "wires": [
+      [
+        "733795ad.9b0d9c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "733795ad.9b0d9c",
+    "type": "time-range-switch",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "lat": "",
+    "lon": "",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 1530,
+    "y": 620,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      [
+        "40cec564.58338c",
+        "5f3465ee.344214"
+      ]
+    ]
+  },
+  {
+    "id": "7cb074c6.af2c34",
+    "type": "poll-state",
+    "z": "8f678c81.ff727",
+    "name": "Sven time of day",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "updateinterval": "5",
+    "updateIntervalUnits": "minutes",
+    "outputinitially": false,
+    "outputonchanged": true,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "x": 940,
+    "y": 700,
+    "wires": [
+      [
+        "f97fdf91.1d3138",
+        "6e2796f2.10537"
+      ]
+    ]
+  },
+  {
+    "id": "6e2796f2.10537",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Wee Hours",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Wee Hours",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1270,
+    "y": 780,
+    "wires": [
+      [
+        "313786.a530c07a"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "313786.a530c07a",
+    "type": "time-range-switch",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "lat": "",
+    "lon": "",
+    "startTime": "02:30",
+    "endTime": "nightEnd",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 1540,
+    "y": 780,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      [
+        "40cec564.58338c",
+        "21e59cb9.7368ec"
+      ]
+    ]
+  },
+  {
+    "id": "27bae41b.333354",
+    "type": "server-state-changed",
+    "z": "8f678c81.ff727",
+    "name": "Sven cutting",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "vacuum.sven",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "Cutting",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "x": 120,
+    "y": 3320,
+    "wires": [
+      [
+        "3bfa5d2d.23f382"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3bfa5d2d.23f382",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "verbose switch",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "true",
+    "halt_if_type": "bool",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.sven_verbose",
+    "state_type": "habool",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 340,
+    "y": 3320,
+    "wires": [
+      [
+        "9dc2d62e.871ae"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9dc2d62e.871ae",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Gotify Message",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "notify",
+    "service": "gotify",
+    "entityId": "",
+    "data": "{\"message\":\"Sven is now cutting\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 560,
+    "y": 3320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a6e9e3bf.830be",
+    "type": "inject",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 940,
+    "y": 640,
+    "wires": [
+      [
+        "f97fdf91.1d3138"
+      ]
+    ]
+  },
+  {
+    "id": "290d26db.22ac92",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Hold",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Hold",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 550,
+    "y": 160,
+    "wires": [
+      [
+        "40cec564.58338c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "21e59cb9.7368ec",
+    "type": "debug",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 1840,
+    "y": 780,
+    "wires": []
+  },
+  {
+    "id": "5f3465ee.344214",
+    "type": "debug",
+    "z": "8f678c81.ff727",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 1840,
+    "y": 620,
+    "wires": []
+  },
+  {
+    "id": "70fe7955.a73118",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven intended parked",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.sven_target_state",
+    "data": "{\"option\":\"parked\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1620,
+    "y": 1680,
+    "wires": [
+      [
+        "aab71068.05ce",
+        "c6afc260.ce6a3"
+      ]
+    ]
+  },
+  {
+    "id": "da119a58.00717",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven intended paused",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.sven_target_state",
+    "data": "{\"option\":\"paused\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1620,
+    "y": 1740,
+    "wires": [
+      [
+        "bbb49bd.5955068"
+      ]
+    ]
+  },
+  {
+    "id": "5a8989b9.ea81c8",
+    "type": "api-call-service",
+    "z": "8f678c81.ff727",
+    "name": "Sven intended cutting",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.sven_target_state",
+    "data": "{\"option\":\"cutting\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 1620,
+    "y": 1620,
+    "wires": [
+      [
+        "292a3b8f.fd8e94"
+      ]
+    ]
+  },
+  {
+    "id": "6d4158b6.f5bd",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "target state paused?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "paused",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_target_state",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1040,
+    "y": 1780,
+    "wires": [
+      [],
+      [
+        "c21f3484.576de"
+      ]
+    ]
+  },
+  {
+    "id": "df6c9a80.eb8138",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "target state parked?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "parked",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_target_state",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1060,
+    "y": 1700,
+    "wires": [
+      [],
+      [
+        "a58575d7.876f88"
+      ]
+    ]
+  },
+  {
+    "id": "cd5adaed.8813f8",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "target state cutting?",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "cutting",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_target_state",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1230,
+    "y": 1560,
+    "wires": [
+      [],
+      [
+        "f69f407e.d13cf8"
+      ]
+    ]
+  },
+  {
+    "id": "40fb6e9.1b2ba9",
+    "type": "server",
+    "z": "",
+    "name": "Home Assistant",
+    "legacy": false,
+    "addon": true,
+    "rejectUnauthorizedCerts": true,
+    "ha_boolean": "y|yes|true|on|home|open",
+    "connectionDelay": true,
+    "cacheJson": true
+  }
+]
