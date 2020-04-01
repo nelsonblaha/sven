@@ -273,9 +273,10 @@
     "y": 540,
     "wires": [
       [
+        "f97fdf91.1d3138",
+        "6e2796f2.10537",
         "32111989.1c65f6",
-        "91d4500e.3abec8",
-        "f97fdf91.1d3138"
+        "9a85e748.bc7c1"
       ],
       []
     ]
@@ -299,8 +300,8 @@
     "entity_location": "data",
     "override_data": "msg",
     "blockInputOverrides": false,
-    "x": 1620,
-    "y": 1040,
+    "x": 1560,
+    "y": 480,
     "wires": [
       [
         "3eb44da7.a6e0c2"
@@ -2342,36 +2343,6 @@
     ]
   },
   {
-    "id": "32111989.1c65f6",
-    "type": "api-current-state",
-    "z": "8f678c81.ff727",
-    "name": "Sven daylight running",
-    "server": "40fb6e9.1b2ba9",
-    "version": 1,
-    "outputs": 2,
-    "halt_if": "Night, Wee Hours, Hold",
-    "halt_if_type": "str",
-    "halt_if_compare": "does_not_include",
-    "override_topic": false,
-    "entity_id": "input_select.sven_time",
-    "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "blockInputOverrides": false,
-    "x": 1300,
-    "y": 1060,
-    "wires": [
-      [
-        "3eb44da7.a6e0c2"
-      ],
-      [
-        "fc2078a7.1b8818"
-      ]
-    ]
-  },
-  {
     "id": "bda3896.bda8378",
     "type": "api-current-state",
     "z": "8f678c81.ff727",
@@ -2425,34 +2396,6 @@
     "wires": []
   },
   {
-    "id": "91d4500e.3abec8",
-    "type": "api-current-state",
-    "z": "8f678c81.ff727",
-    "name": "All",
-    "server": "40fb6e9.1b2ba9",
-    "version": 1,
-    "outputs": 2,
-    "halt_if": "All",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "override_topic": false,
-    "entity_id": "input_select.sven_time",
-    "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "blockInputOverrides": false,
-    "x": 1250,
-    "y": 940,
-    "wires": [
-      [
-        "3eb44da7.a6e0c2"
-      ],
-      []
-    ]
-  },
-  {
     "id": "f97fdf91.1d3138",
     "type": "api-current-state",
     "z": "8f678c81.ff727",
@@ -2500,43 +2443,6 @@
       [
         "40cec564.58338c",
         "5f3465ee.344214"
-      ]
-    ]
-  },
-  {
-    "id": "7cb074c6.af2c34",
-    "type": "poll-state",
-    "z": "8f678c81.ff727",
-    "name": "Sven time of day",
-    "server": "40fb6e9.1b2ba9",
-    "version": 1,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "updateinterval": "5",
-    "updateIntervalUnits": "minutes",
-    "outputinitially": false,
-    "outputonchanged": true,
-    "entity_id": "input_select.sven_time",
-    "state_type": "str",
-    "halt_if": "",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 1,
-    "x": 940,
-    "y": 700,
-    "wires": [
-      [
-        "f97fdf91.1d3138",
-        "6e2796f2.10537"
       ]
     ]
   },
@@ -2690,11 +2596,11 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 940,
-    "y": 640,
+    "x": 560,
+    "y": 540,
     "wires": [
       [
-        "f97fdf91.1d3138"
+        "9611fe7b.b83d7"
       ]
     ]
   },
@@ -2912,6 +2818,98 @@
       [
         "f69f407e.d13cf8"
       ]
+    ]
+  },
+  {
+    "id": "1abff55a.5813db",
+    "type": "poll-state",
+    "z": "8f678c81.ff727",
+    "name": "periodic check",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "updateinterval": "5",
+    "updateIntervalUnits": "minutes",
+    "outputinitially": false,
+    "outputonchanged": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "x": 550,
+    "y": 500,
+    "wires": [
+      [
+        "9611fe7b.b83d7"
+      ]
+    ]
+  },
+  {
+    "id": "32111989.1c65f6",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "Night mode",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "Night",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1270,
+    "y": 480,
+    "wires": [
+      [
+        "fc2078a7.1b8818"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9a85e748.bc7c1",
+    "type": "api-current-state",
+    "z": "8f678c81.ff727",
+    "name": "All",
+    "server": "40fb6e9.1b2ba9",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "All",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_select.sven_time",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 1250,
+    "y": 920,
+    "wires": [
+      [
+        "3eb44da7.a6e0c2"
+      ],
+      []
     ]
   },
   {
